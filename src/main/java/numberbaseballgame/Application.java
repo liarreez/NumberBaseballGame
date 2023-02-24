@@ -1,10 +1,13 @@
 package numberbaseballgame;
 
 public class Application {
-    public static void main(String[] args) {
-        Computer computer = new Computer();
 
+    private static final Computer computer = new Computer();
+    private static final User user = new User();
+
+    public static void main(String[] args) {
         computer.printStartMessage();
         computer.generateRandomNumber();
+        user.inputNumber();
     }
 }
