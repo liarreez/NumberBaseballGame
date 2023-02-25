@@ -9,5 +9,6 @@ public class Application {
         computer.printStartMessage();
         computer.generateRandomNumber();
         user.inputNumber();
+        computer.hintCalculator(user.userNumber);
     }
 }
