@@ -72,7 +72,7 @@ public class Computer {
 
     public void repeatInput() {
         for (int i = 0; i < NUMBER_GAMEPLAY_LIMIT+1; i++) {
-            if (strike == 4 || gamePlayCount == 10) {
+            if (strike == 4 || gamePlayCount == NUMBER_GAMEPLAY_LIMIT) {
                 printGameResult();
                 break;
             }
@@ -87,7 +87,7 @@ public class Computer {
     public void printGameResult() {
         if (strike == 4) {
             System.out.printf("정답입니다!(시도 횟수 : %d)%n", gamePlayCount);
-        } else if (gamePlayCount == 10) {
+        } else if (gamePlayCount == NUMBER_GAMEPLAY_LIMIT) {
             System.out.println("실패입니다! 다음에 다시 도전해주세요.");
         }
     }
