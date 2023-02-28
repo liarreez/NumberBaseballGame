@@ -13,6 +13,13 @@ public class Computer {
     private static final User user = new User();
     private final int[] computerNumber = new int[NUMBER_LENGTH];
 
+    public void playGame() {
+        printStartMessage();
+        generateRandomNumber();
+        repeatInput();
+        resetGame();
+        gameRestart();
+    }
 
     public void printStartMessage() {
         System.out.println("숫자 야구 게임을 시작합니다.");
@@ -90,5 +97,20 @@ public class Computer {
         } else if (gamePlayCount == NUMBER_GAMEPLAY_LIMIT) {
             System.out.println("실패입니다! 다음에 다시 도전해주세요.");
         }
+    }
+
+    public void gameRestart() {
+        String inputRestart = user.inputRestart();
+        if(inputRestart.equals("q")) {
+            System.out.println("게임 종료");
+        } else if(inputRestart.equals("c")) {
+            playGame();
+        }
+    }
+
+    public void resetGame() {
+        gamePlayCount = 0;
+        strike = 0;
+        ball = 0;
     }
 }
