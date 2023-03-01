@@ -14,6 +14,8 @@ public class User {
             for (int i = 0; i < computer.NUMBER_LENGTH; i++) {
                 userNumber[i] = (tmpInput.charAt(i) - '0');
             }
+            if (tmpInput.length() != computer.NUMBER_LENGTH)
+                throw new StringIndexOutOfBoundsException();
             if (duplicateNumCheck(userNumber)) {
                 throw new StringIndexOutOfBoundsException();
             }
